@@ -81,7 +81,7 @@ func RunServer() {
 	mux.Handle("/metrics", prometheusHandler())
 	logFatal("ListenAndServe: ", httpListenAndServe(":8080", mux))
 }
-// TODO: Test
+// TODO: Test this
 func HelloServer(w http.ResponseWriter, req *http.Request) {
 	start := time.Now()
 	defer func() { recordMetrics(start, req, http.StatusOK) }()
